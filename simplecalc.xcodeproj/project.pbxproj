@@ -14,6 +14,8 @@
 		9D3DA8CC1CC9567E00AF1D00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9D3DA8CA1CC9567E00AF1D00 /* LaunchScreen.storyboard */; };
 		9D3DA8D71CC9567E00AF1D00 /* simplecalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3DA8D61CC9567E00AF1D00 /* simplecalcTests.swift */; };
 		9D3DA8E21CC9567E00AF1D00 /* simplecalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D3DA8E11CC9567E00AF1D00 /* simplecalcUITests.swift */; };
+		9D6AD9E91CD0522A003F5BF4 /* calc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AD9E81CD0522A003F5BF4 /* calc.swift */; };
+		9D6AD9EF1CD05C01003F5BF4 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D6AD9EE1CD05C01003F5BF4 /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		9D3DA8DD1CC9567E00AF1D00 /* simplecalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = simplecalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D3DA8E11CC9567E00AF1D00 /* simplecalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = simplecalcUITests.swift; sourceTree = "<group>"; };
 		9D3DA8E31CC9567E00AF1D00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9D6AD9E81CD0522A003F5BF4 /* calc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = calc.swift; sourceTree = "<group>"; };
+		9D6AD9EE1CD05C01003F5BF4 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +107,8 @@
 				9D3DA8C81CC9567E00AF1D00 /* Assets.xcassets */,
 				9D3DA8CA1CC9567E00AF1D00 /* LaunchScreen.storyboard */,
 				9D3DA8CD1CC9567E00AF1D00 /* Info.plist */,
+				9D6AD9E81CD0522A003F5BF4 /* calc.swift */,
+				9D6AD9EE1CD05C01003F5BF4 /* HistoryViewController.swift */,
 			);
 			path = simplecalc;
 			sourceTree = "<group>";
@@ -257,7 +263,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				9D3DA8C41CC9567E00AF1D00 /* ViewController.swift in Sources */,
+				9D6AD9E91CD0522A003F5BF4 /* calc.swift in Sources */,
 				9D3DA8C21CC9567E00AF1D00 /* AppDelegate.swift in Sources */,
+				9D6AD9EF1CD05C01003F5BF4 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +492,7 @@
 				9D3DA8E81CC9567E00AF1D00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D3DA8E91CC9567E00AF1D00 /* Build configuration list for PBXNativeTarget "simplecalcTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +501,7 @@
 				9D3DA8EB1CC9567E00AF1D00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9D3DA8EC1CC9567E00AF1D00 /* Build configuration list for PBXNativeTarget "simplecalcUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +510,7 @@
 				9D3DA8EE1CC9567E00AF1D00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

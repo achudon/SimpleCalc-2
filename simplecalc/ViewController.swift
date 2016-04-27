@@ -20,11 +20,9 @@ class ViewController: UIViewController {
     
     var textToDisplay = "";
     
-    var numCount = 0;
-    
-    var numSum = 0;
-    
     var finishedOp = false
+    
+    var calc = Calc.Instance
     
 
     @IBOutlet weak var textDisplay: UITextField!
@@ -64,38 +62,37 @@ class ViewController: UIViewController {
     
     @IBAction func doOperation() {
         
-        
         finishedOp = true
         
         switch operation {
         case "+" :
             setSecondNumber()
-            textToDisplay += " = \(add(firstNumber, right: secondNumber))"
+            textToDisplay += " = \(calc.Add(firstNumber, right: secondNumber))"
             displayToUI()
         case "-" :
             setSecondNumber()
-            textToDisplay += " = \(subtract(firstNumber, right: secondNumber))"
+            textToDisplay += " = \(calc.Subtract(firstNumber, right: secondNumber))"
             displayToUI()
         case "*" :
             setSecondNumber()
-            textToDisplay += " = \(multiply(firstNumber, right: secondNumber))"
+            textToDisplay += " = \(calc.Multiply(firstNumber, right: secondNumber))"
             displayToUI()
         case "/" :
             setSecondNumber()
-            textToDisplay += " = \(divide(firstNumber, right: secondNumber))"
+            textToDisplay += " = \(calc.Divide(firstNumber, right: secondNumber))"
             displayToUI()
         case "%" :
             setSecondNumber()
-            textToDisplay += " = \(mod(firstNumber, right: secondNumber))"
+            textToDisplay += " = \(calc.Mod(firstNumber, right: secondNumber))"
             displayToUI()
         case "COUNT" :
-            textToDisplay += " = \(count())"
+            textToDisplay += " = \(calc.Count())"
             displayToUI()
         case "AVG" :
-            textToDisplay += " = \(avg())"
+            textToDisplay += " = \(calc.Avg())"
             displayToUI()
-        case "FACT" :
-            textToDisplay += " = \(factorial())"
+        case "!" :
+            textToDisplay += " = \(calc.Factorial(firstNumber))"
             displayToUI()
         default :
             print("Not a valid operator")
@@ -107,31 +104,18 @@ class ViewController: UIViewController {
     }
     
     func setFirstNumber() {
-        firstNumber = intVersion(currNumberString)
-        addToCountAndAvg(firstNumber)
+        firstNumber = calc.IntVersion(currNumberString)
+        calc.AddToCountAndAvg(firstNumber)
         NSLog("first number \(firstNumber)")
     }
     
     func setSecondNumber() {
-        secondNumber = intVersion(currNumberString)
-        addToCountAndAvg(secondNumber)
+        secondNumber = calc.IntVersion(currNumberString)
+        calc.AddToCountAndAvg(secondNumber)
         NSLog("second number \(secondNumber)")
     }
     
-    func addToCountAndAvg(num : Int) {
-        numCount += 1
-        NSLog("count is \(numCount)")
-        numSum += num
-        NSLog("sum is \(numSum)")
-    }
     
-    func intVersion(toConvert : String) -> Int {
-        if Int(toConvert) != nil {
-            return Int(toConvert)!
-        }
-        NSLog("not convertible to an int")
-        return 0
-    }
     
     func displayToUI() {
         textDisplay.text = textToDisplay
@@ -153,57 +137,13 @@ class ViewController: UIViewController {
         
         textToDisplay = "";
         
-        numCount = 0;
+        calc.NumCount = 0;
         
-        numSum = 0;
+        calc.NumSum = 0;
         
         displayToUI()
     }
     
-    func add(left : Int, right : Int) -> Int {
-        return left + right
-    }
     
-    func subtract(left : Int, right : Int) -> Int {
-        return left - right
-    }
-    
-    func divide(left : Int, right : Int) -> Int {
-        NSLog("left \(left)")
-        NSLog("right \(right)")
-        if (right == 0) {
-            return 0
-        }
-        return left / right
-    }
-    
-    func multiply(left : Int, right : Int) -> Int {
-        return left * right
-    }
-    
-    func mod(left : Int, right : Int) -> Int {
-        return left % right
-    }
-    
-    func count() -> Int {
-        return numCount
-    }
-    
-    func avg() -> Int {
-        return numSum / numCount
-    }
-    
-    func factorial() -> Int {
-        var result = 0
-        if (firstNumber == 0) {
-            result = 1
-        } else {
-            result = 1
-            for var i = firstNumber; i > 1; i -= 1 {
-                result *= i
-            }
-        }
-        return result
-    }
 }
 
