@@ -18,11 +18,14 @@ class HistoryViewController: UIViewController {
         super.viewDidLoad()
         historyText.userInteractionEnabled = false
         
+        if Calc.Instance.History.count < 1 {
+            historyText.text = "No history to display"
+        }
+        
         for calculation in Calc.Instance.History {
-            historyText.text = historyText.text + calculation
+            historyText.text = "\(historyText.text) \(calculation) \n"
         }
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
     
 }

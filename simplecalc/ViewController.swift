@@ -98,9 +98,16 @@ class ViewController: UIViewController {
             print("Not a valid operator")
             clearAll()
         }
+        if (textToDisplay != "") {
+            sendToHistory()
+        }
         currNumberString = ""
         operation = ""
         
+    }
+    
+    func sendToHistory() {
+        Calc.Instance.History.append(textToDisplay)
     }
     
     func setFirstNumber() {
